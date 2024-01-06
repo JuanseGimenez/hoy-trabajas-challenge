@@ -1,0 +1,15 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - db/**/*
+    - bin/*
+    - vendor/**/*
+    - tmp/*
+    - config/**/*
+    - config.ru
+    - Rakefile

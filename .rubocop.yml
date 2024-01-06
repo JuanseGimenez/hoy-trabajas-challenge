@@ -13,3 +13,9 @@ AllCops:
     - config/**/*
     - config.ru
     - Rakefile
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false

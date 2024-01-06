@@ -7,7 +7,6 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require_relative 'support/factory_bot'
 require 'faker'
-require 'spec_helper'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!

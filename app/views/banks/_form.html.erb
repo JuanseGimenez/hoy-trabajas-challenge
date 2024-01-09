@@ -1,0 +1,20 @@
+<%= form_with(model: bank) do |form| %>
+  <% if bank.errors.any? %>
+    <div>
+      <ul>
+      <% bank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

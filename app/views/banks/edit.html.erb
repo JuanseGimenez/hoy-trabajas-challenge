@@ -1,0 +1,5 @@
+<h1><%= I18n.t('bank.edit.title') %></h1>
+<%= render 'form', bank: @bank %>
+<br>
+<%= link_to I18n.t('actions.show'), @bank %> |
+<%= link_to I18n.t('actions.back'), banks_path %>

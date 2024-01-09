@@ -1,1 +1,30 @@
 es:
+  actions:
+    title: Acciones
+    show: Ver
+    edit: Editar
+    destroy: Eliminar
+    new: Nuevo %{model}
+    back: Volver
+  activerecord:
+    models:
+      bank: Banco
+    attributes:
+      bank:
+        name: Nombre
+    helpers:
+      submit:
+        bank:
+          create: Crear Banco
+          update: Actualizar Banco
+  bank:
+    message_created: Banco creado exitosamente
+    message_updated: Banco actualizado exitosamente
+    message_destroyed: Banco eliminado exitosamente
+    index:
+      title: Bancos
+      not_found: No se encontraron bancos
+    edit:
+      title: Editar Banco
+    new:
+      title: Nuevo Banco

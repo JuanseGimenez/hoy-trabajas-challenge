@@ -1,0 +1,8 @@
+<div>
+  <h1><%= @bank.name %></h1>
+</div>
+<br>
+<div>
+  <%= link_to I18n.t('actions.edit'), edit_bank_path(@bank) %> |
+  <%= link_to I18n.t('actions.back'), banks_path %>
+</div>

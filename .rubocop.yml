@@ -19,3 +19,7 @@ Style/FrozenStringLiteralComment:
 
 Style/Documentation:
   Enabled: false
+
+RSpec/ExpectActual:
+  Exclude:
+    - spec/routes/**/*

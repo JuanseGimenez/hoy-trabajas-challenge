@@ -1,4 +1,4 @@
-describe BanksController, type: :controller do
+describe BanksController do
   describe 'GET #index' do
     let(:bank) { create(:bank) }
 

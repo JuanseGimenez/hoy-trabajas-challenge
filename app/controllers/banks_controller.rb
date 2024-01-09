@@ -5,6 +5,14 @@ class BanksController < ApplicationController
     @banks = Bank.all
   end
 
+  def show; end
+
+  def new
+    @bank = Bank.new
+  end
+
+  def edit; end
+
   def create
     @bank = Bank.new(bank_params)
 
@@ -17,12 +25,6 @@ class BanksController < ApplicationController
     end
   end
 
-  def new
-    @bank = Bank.new
-  end
-
-  def show; end
-
   def update
     respond_to do |format|
       if @bank.update(bank_params)
@@ -32,8 +34,6 @@ class BanksController < ApplicationController
       end
     end
   end
-
-  def edit; end
 
   def destroy
     @bank.destroy

@@ -9,9 +9,15 @@ es:
   activerecord:
     models:
       bank: Banco
+      provider: Proveedor
     attributes:
       bank:
         name: Nombre
+      provider:
+        name: Nombre
+        nit: NIT
+        contact_name: Nombre de Contacto
+        contact_phone: Teléfono de Contacto
     helpers:
       submit:
         bank:

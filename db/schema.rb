@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_09_195934) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_09_210307) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_09_195934) do
     t.string "contact_phone", limit: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "bank_id", null: false
+    t.string "bank_account_number", limit: 10
+    t.index ["bank_id"], name: "index_providers_on_bank_id"
   end
 
+  add_foreign_key "providers", "banks"
 end

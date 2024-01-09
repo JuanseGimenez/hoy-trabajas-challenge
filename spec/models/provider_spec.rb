@@ -1,5 +1,6 @@
 describe Provider do
   describe 'validations' do
+    it { is_expected.to belong_to(:bank) }
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:nit) }
     it { is_expected.to validate_presence_of(:contact_name) }
@@ -9,5 +10,6 @@ describe Provider do
     it { is_expected.to allow_value('123456789-').for(:nit) }
     it { is_expected.not_to allow_value('123456789-12').for(:nit) }
     it { is_expected.not_to allow_value('123456789').for(:nit) }
+    it { is_expected.to validate_length_of(:bank_account_number).is_at_most(10) }
   end
 end

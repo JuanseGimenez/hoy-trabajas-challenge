@@ -38,5 +38,7 @@ module HoyTrabajasChallenge
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.available_locales = %i[en es]
+    config.i18n.default_locale = :es
   end
 end

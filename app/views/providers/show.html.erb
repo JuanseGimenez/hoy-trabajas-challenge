@@ -1,10 +1,10 @@
 <div>
-  <h1>Proveedor: <%= @provider.name %></h1>
-  <p></p>NIT:<%= @provider.nit %></p>
-  <p>Contact name: <%= @provider.contact_name %></p>
-  <p>Contact phone: <%= @provider.contact_phone %></p>
-  <p>Banco: <%= @provider.bank_account.bank.name %></p>
-  <p>Numero de cuenta bancaria: <%= @provider.bank_account.number %></p>
+  <h1><%= Provider.model_name.human %>: <%= @provider.name %></h1>
+  <p><%= Provider.human_attribute_name :nit %>: <%= @provider.nit %></p>
+  <p><%= Provider.human_attribute_name :contact_name  %>: <%= @provider.contact_name %></p>
+  <p><%= Provider.human_attribute_name :contact_phone  %>: <%= @provider.contact_phone %></p>
+  <p><%= Bank.model_name.human %>: <%= @provider.bank_account.bank.name %></p>
+  <p><%= BankAccount.human_attribute_name :number %>: <%= @provider.bank_account.number %></p>
 </div>
 
 <%= link_to I18n.t('actions.back'), providers_path %>

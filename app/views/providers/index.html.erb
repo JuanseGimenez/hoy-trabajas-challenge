@@ -7,8 +7,8 @@
       <th><%= Provider.human_attribute_name :name %></th>
       <th><%= Provider.human_attribute_name :contact_name %></th>
       <th><%= Provider.human_attribute_name :contact_phone %></th>
-      <th>Banco</th>
-      <th>Numero de cuenta bancaria</th>
+      <th><%= Bank.model_name.human %></th>
+      <th><%= BankAccount.human_attribute_name :number %></th>
       <th><%= I18n.t('actions.title') %></th>
     </tr>
   </thead>

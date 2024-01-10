@@ -19,7 +19,7 @@ es:
         contact_name: Nombre de Contacto
         contact_phone: Teléfono de Contacto
       bank_account:
-        number: Número de Cuenta
+        number: Número de Cuenta bancaria
         bank_id: Banco
     helpers:
       submit:

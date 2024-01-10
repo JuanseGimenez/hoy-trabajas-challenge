@@ -38,7 +38,14 @@ es:
     new:
       title: Nuevo Banco
   provider:
-    nit_format: "El NIT debe tener el siguiente formato: 12345678-9 siendo el ultimo digito opcional"
+    nit_format: "debe tener el siguiente formato: 12345678-9 siendo el ultimo digito opcional"
     message_created: Proveedor creado exitosamente
+    message_updated: Proveedor actualizado exitosamente
+    message_destroyed: Proveedor eliminado exitosamente
+    index:
+      title: Proveedores
+      not_found: No se encontraron proveedores
     new:
       title: Nuevo Proveedor
+    edit:
+      title: Editar Proveedor

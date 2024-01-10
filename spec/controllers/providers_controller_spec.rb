@@ -44,5 +44,37 @@ describe ProvidersController do
         expect(response).to redirect_to(providers_path)
       end
     end
+
+    context 'with invalid params' do
+      let(:provider_params) do
+        {
+          name: '',
+          nit: '',
+          contact_name: '',
+          contact_phone: '',
+          bank_account_attributes: {
+            number: '',
+            bank_id: ''
+          }
+        }
+      end
+
+      it 'does not create a new Provider' do
+        expect do
+          post :create, params: { provider: provider_params }
+        end.not_to change(Provider, :count)
+      end
+
+      it 'does not create a new BankAccount' do
+        expect do
+          post :create, params: { provider: provider_params }
+        end.not_to change(BankAccount, :count)
+      end
+
+      it 'renders the new template' do
+        post :create, params: { provider: provider_params }
+        expect(response).to render_template(:new)
+      end
+    end
   end
 end

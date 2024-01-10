@@ -1,4 +1,6 @@
 class Provider < ApplicationRecord
+  self.per_page = 10
+
   has_one :bank_account, dependent: :destroy
 
   accepts_nested_attributes_for :bank_account

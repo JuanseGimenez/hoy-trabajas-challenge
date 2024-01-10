@@ -3,7 +3,9 @@ class ProvidersController < ApplicationController
   before_action :set_provider, only: %i[show edit update destroy]
 
   def index
-    @providers = Provider.includes(bank_account: :bank)
+    @providers = Provider
+                 .includes(bank_account: :bank)
+                 .paginate(page: params[:page])
   end
 
   def show; end

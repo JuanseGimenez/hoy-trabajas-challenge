@@ -1,9 +1,22 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+puts 'Creating banks...'
+banks = ['ICBC', 'Banco Nacion', 'Banco Provincia']
+
+banks.each do |name|
+  bank = Bank.create!(name: name)
+  puts "Bank created #{bank.name}"
+end
+
+puts 'Creating providers...'
+30.times do
+  provider = Provider.create!(name: Faker::Company.name,
+                             nit: "#{Faker::Number.number(digits: 9)}-#{Faker::Number.number(digits: 1)}",
+                             contact_name: Faker::Name.name,
+                             contact_phone: Faker::Number.number(digits: 10))
+  puts "Provider created #{provider.name}"
+
+  puts 'Creating bank account...'
+  bank_account = BankAccount.create!(number: Faker::Number.number(digits: 15),
+                     bank_id: Bank.all.sample.id,
+                     provider_id: provider.id)
+  puts "Bank account created #{bank_account.number}"
+end

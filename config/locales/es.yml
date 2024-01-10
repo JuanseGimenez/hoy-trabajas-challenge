@@ -32,7 +32,7 @@ es:
     message_destroyed: Banco eliminado exitosamente
     index:
       title: Bancos
-      not_found: No se encontraron bancos
+      not_found: Sin información en la tabla
     edit:
       title: Editar Banco
     new:
@@ -44,7 +44,7 @@ es:
     message_destroyed: Proveedor eliminado exitosamente
     index:
       title: Proveedores
-      not_found: No se encontraron proveedores
+      not_found: Sin información en la tabla
     new:
       title: Nuevo Proveedor
     edit:

@@ -1,0 +1,45 @@
+<%= form_with(model: provider) do |form| %>
+  <% if provider.errors.any? %>
+    <div>
+      <ul>
+      <% provider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :nit %>
+    <%= form.text_field :nit %>
+  </div>
+
+  <div>
+    <%= form.label :contact_name %>
+    <%= form.text_field :contact_name %>
+  </div>
+
+  <div>
+    <%= form.label :contact_phone %>
+    <%= form.text_field :contact_phone %>
+  </div>
+
+  <div>
+    <%= form.fields_for :bank_account do |bank_account_form| %>
+      <%= bank_account_form.label :bank_id %>
+      <%= bank_account_form.collection_select :bank_id, banks, :id, :name %>
+
+      <%= bank_account_form.label :number %>
+      <%= bank_account_form.text_field :number %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

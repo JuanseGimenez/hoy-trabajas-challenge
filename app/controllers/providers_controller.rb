@@ -1,4 +1,6 @@
 class ProvidersController < ApplicationController
+  before_action :set_banks, only: %i[new create]
+
   def new
     @provider = Provider.new
     @provider.build_bank_account
@@ -21,5 +23,9 @@ class ProvidersController < ApplicationController
   def provider_params
     params.require(:provider).permit(:name, :nit, :contact_name, :contact_phone,
                                      bank_account_attributes: %i[number bank_id])
+  end
+
+  def set_banks
+    @banks = Bank.all
   end
 end

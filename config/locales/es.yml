@@ -18,6 +18,9 @@ es:
         nit: NIT
         contact_name: Nombre de Contacto
         contact_phone: Teléfono de Contacto
+      bank_account:
+        number: Número de Cuenta
+        bank_id: Banco
     helpers:
       submit:
         bank:
@@ -37,3 +40,5 @@ es:
   provider:
     nit_format: "El NIT debe tener el siguiente formato: 12345678-9 siendo el ultimo digito opcional"
     message_created: Proveedor creado exitosamente
+    new:
+      title: Nuevo Proveedor

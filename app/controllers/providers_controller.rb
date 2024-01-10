@@ -1,6 +1,7 @@
 class ProvidersController < ApplicationController
   def new
     @provider = Provider.new
+    @provider.build_bank_account
   end
 
   def create
@@ -18,7 +19,7 @@ class ProvidersController < ApplicationController
   private
 
   def provider_params
-    params.require(:provider).permit(:name, :nit, :contact_name,
-                                     :contact_phone, :bank_account_number, :bank_id)
+    params.require(:provider).permit(:name, :nit, :contact_name, :contact_phone,
+                                     bank_account_attributes: %i[number bank_id])
   end
 end

@@ -19,8 +19,10 @@ describe ProvidersController do
         nit: '123456789-1',
         contact_name: 'Contact name',
         contact_phone: '1234567890',
-        bank_account_number: '1234567890',
-        bank_id: bank.id
+        bank_account_attributes: {
+          number: '123456789012345',
+          bank_id: bank.id
+        }
       }
     end
 
@@ -29,6 +31,12 @@ describe ProvidersController do
         expect do
           post :create, params: { provider: provider_params }
         end.to change(Provider, :count).by(1)
+      end
+
+      it 'creates a new BankAccount' do
+        expect do
+          post :create, params: { provider: provider_params }
+        end.to change(BankAccount, :count).by(1)
       end
 
       it 'redirects to the created provider' do

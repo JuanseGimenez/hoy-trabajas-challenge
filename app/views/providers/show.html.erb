@@ -1,0 +1,12 @@
+<div>
+  <h1>Proveedor: <%= @provider.name %></h1>
+  <p></p>NIT:<%= @provider.nit %></p>
+  <p>Contact name: <%= @provider.contact_name %></p>
+  <p>Contact phone: <%= @provider.contact_phone %></p>
+  <p>Banco: <%= @provider.bank_account.bank.name %></p>
+  <p>Numero de cuenta bancaria: <%= @provider.bank_account.number %></p>
+</div>
+
+<%= link_to I18n.t('actions.back'), providers_path %>
+<%= link_to I18n.t('actions.edit'), edit_provider_path(@provider) %>
+<%= link_to I18n.t('actions.destroy'), @provider, data: { "turbo-method": :delete } %>

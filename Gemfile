@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 ruby '3.3.0'
 
 gem 'bootsnap', require: false
+gem 'devise'
+gem 'devise-i18n'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'

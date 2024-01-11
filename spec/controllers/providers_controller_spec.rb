@@ -1,4 +1,6 @@
 describe ProvidersController do
+  before { sign_in }
+
   describe 'GET #index' do
     it 'returns a success response' do
       get :index

@@ -5,8 +5,9 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 
 require 'rspec/rails'
 require 'shoulda/matchers'
-require_relative 'support/factory_bot'
 require 'faker'
+require_relative 'support/factory_bot'
+require_relative 'support/controller_helpers'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -24,6 +25,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   config.include Shoulda::Matchers::ActiveModel, type: :model
   config.include Shoulda::Matchers::ActiveRecord, type: :model
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include ControllerHelpers, type: :controller
 
   %i[controller view request].each do |type|
     config.include(Rails::Controller::Testing::TestProcess, type:)

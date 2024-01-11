@@ -1,4 +1,6 @@
 describe BanksController do
+  before { sign_in }
+
   describe 'GET #index' do
     let(:bank) { create(:bank) }
 

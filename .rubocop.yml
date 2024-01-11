@@ -23,3 +23,11 @@ Style/Documentation:
 RSpec/ExpectActual:
   Exclude:
     - spec/routes/**/*
+
+RSpec/VerifiedDoubles:
+  Exclude:
+    - spec/support/controller_helpers.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - spec/support/controller_helpers.rb

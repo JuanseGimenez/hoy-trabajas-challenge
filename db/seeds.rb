@@ -20,3 +20,9 @@ puts 'Creating providers...'
                      provider_id: provider.id)
   puts "Bank account created #{bank_account.number}"
 end
+
+puts 'Creating user...'
+user = User.create!(email: 'admin@challenge.com',
+                    password: 'password',
+                    password_confirmation: 'password')
+puts "User created email: #{user.email} password: password"

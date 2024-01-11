@@ -49,3 +49,7 @@ es:
       title: Nuevo Proveedor
     edit:
       title: Editar Proveedor
+  devise:
+    shared:
+      links:
+        sign_out: Cerrar sesión

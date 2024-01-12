@@ -1,11 +1,11 @@
 # CHALLENGE HOY TRABAJAS
 
-## VERSIONS USED
+### VERSIONS USED
 
 - ruby 3.3.0
 - postgresql 13
 
-## ENV VARIABLES
+### ENV VARIABLES
 
 ```
 DATABASE_USERNAME=
@@ -14,14 +14,28 @@ DATABASE_PORT=
 DATABASE_HOST=
 ```
 
-## INSTALLATION
+### INSTALLATION
 
 ```sh
-bundle install
-bundle exec rails db:prepare
+$ bundle install
+$ bundle exec rails db:prepare
 ```
 
-## DATA
+### RUN SERVER
+```sh
+$ bundle exec rails server
+```
 
-- email: admin@challenge.com
-- password: password
+### DATA
+
+- _email:_ admin@challenge.com
+- _password:_ password
+
+### ENDPOINTS
+
+| URL | RESOURCE |
+| --- | ------   |
+| /   | Home page |
+| /banks | Bancos |
+| /providers | Proveedores |
+| /dashboard | Dashboard |

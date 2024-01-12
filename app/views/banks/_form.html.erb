@@ -1,9 +1,9 @@
-<%= form_with(model: bank) do |form| %>
+<%= form_with(model: bank, class: 'form-container') do |form| %>
   <% if bank.errors.any? %>
     <div>
       <ul>
       <% bank.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="text-danger"><%= message %></li>
       <% end %>
       </ul>
     </div>
@@ -15,6 +15,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: 'button button-primary' %>
   </div>
 <% end %>

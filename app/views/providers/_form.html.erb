@@ -1,9 +1,9 @@
-<%= form_with(model: provider) do |form| %>
+<%= form_with(model: provider, class: 'form-container') do |form| %>
   <% if provider.errors.any? %>
-    <div>
+    <div class="mb-1">
       <ul>
       <% provider.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="text-danger"><%= message %></li>
       <% end %>
       </ul>
     </div>
@@ -40,6 +40,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "button button-primary" %>
   </div>
 <% end %>

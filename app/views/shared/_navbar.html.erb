@@ -1,10 +1,28 @@
-<%= link_to Bank.model_name.human.pluralize, banks_path %><br>
-<%= link_to Provider.model_name.human.pluralize, providers_path %><br>
-<%= link_to 'Dashboard', dashboard_path %><br>
-
-<% if user_signed_in? %>
-  <%= link_to I18n.t('devise.shared.links.sign_out'), destroy_user_session_path, data: { "turbo-method": :delete } %>
-<% else %>
-  <%= link_to I18n.t('devise.shared.links.sign_in'), new_user_session_path %>
-  <%= link_to I18n.t('devise.shared.links.sign_up'), new_user_registration_path %>
-<% end %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "Challenge", root_path, class: "navbar-brand" %>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to Bank.model_name.human.pluralize, banks_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to Provider.model_name.human.pluralize, providers_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Dashboard', dashboard_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to I18n.t('devise.shared.links.sign_out'), destroy_user_session_path, data: { "turbo-method": :delete }, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to I18n.t('devise.shared.links.sign_in'), new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to I18n.t('devise.shared.links.sign_up'), new_user_registration_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

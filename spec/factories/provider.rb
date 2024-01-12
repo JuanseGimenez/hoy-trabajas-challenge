@@ -6,7 +6,7 @@ FactoryBot.define do
     contact_phone { '123456789' }
 
     before(:create) do |provider|
-      provider.bank_account = create(:bank_account, provider: provider)
+      provider.bank_account = create(:bank_account, provider:)
     end
   end
 end

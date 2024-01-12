@@ -1,24 +1,27 @@
-# README
+# CHALLENGE HOY TRABAJAS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## VERSIONS USED
 
-Things you may want to cover:
+- ruby 3.3.0
+- postgresql 13
 
-* Ruby version
+## ENV VARIABLES
 
-* System dependencies
+```
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
+DATABASE_PORT=
+DATABASE_HOST=
+```
 
-* Configuration
+## INSTALLATION
 
-* Database creation
+```sh
+bundle install
+bundle exec rails db:prepare
+```
 
-* Database initialization
+## DATA
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- email: admin@challenge.com
+- password: password

@@ -38,16 +38,22 @@ class ProvidersController < ApplicationController
         format.json { render :show, status: :ok, location: @provider }
       else
         format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @provider.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  def destroy
-    @provider.destroy
-
+  def destroy # rubocop:disable Metrics/MethodLength
     respond_to do |format|
-      format.html { redirect_to providers_path, notice: I18n.t('provider.message_destroyed') }
-      format.json { head :no_content }
+      if @provider.destroy
+        format.html { redirect_to providers_path, notice: I18n.t('provider.message_destroyed') }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to providers_path, notice: I18n.t('provider.message_not_destroyed') }
+        format.json do
+          render json: { message: I18n.t('provider.message_not_destroyed') }, status: :unprocessable_entity
+        end
+      end
     end
   end
 

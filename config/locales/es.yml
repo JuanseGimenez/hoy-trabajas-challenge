@@ -30,7 +30,10 @@ es:
     message_created: Banco creado exitosamente
     message_updated: Banco actualizado exitosamente
     message_destroyed: Banco eliminado exitosamente
+    message_not_destroyed: No se pudo eliminar el banco
     not_found: No se encontró el banco
+    validation:
+      bank_account_presence: No se puede borrar el banco porque hay cuentas bancarias asociadas.
     index:
       title: Bancos
       not_found: Sin información en la tabla
@@ -45,6 +48,7 @@ es:
     message_created: Proveedor creado exitosamente
     message_updated: Proveedor actualizado exitosamente
     message_destroyed: Proveedor eliminado exitosamente
+    message_not_destroyed: No se pudo eliminar el proveedor
     index:
       title: Proveedores
       not_found: Sin información en la tabla

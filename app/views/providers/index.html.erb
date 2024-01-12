@@ -1,7 +1,7 @@
 <h1><%= I18n.t('provider.index.title') %></h1>
 <%= link_to I18n.t('actions.new', model: Provider.model_name.human), new_provider_path %>
-<br>
-<table>
+
+<table class="mt-2 mb-2">
   <thead>
     <tr>
       <th><%= Provider.human_attribute_name :name %></th>
@@ -24,7 +24,7 @@
         <td><%= link_to provider.name, provider %></td>
         <td><%= provider.contact_name %></td>
         <td><%= provider.contact_phone %></td>
-        <td><%= provider.bank_account.bank.name %></td>
+        <td><%= provider.bank.name %></td>
         <td><%= provider.bank_account.number %></td>
         <td>
           <%= link_to I18n.t('actions.edit'), edit_provider_path(provider) %>
@@ -34,7 +34,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 <%= will_paginate @providers %>

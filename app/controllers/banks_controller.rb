@@ -39,12 +39,15 @@ class BanksController < ApplicationController
     end
   end
 
-  def destroy
-    @bank.destroy
-
+  def destroy # rubocop:disable Metrics/AbcSize
     respond_to do |format|
-      format.html { redirect_to banks_path, notice: I18n.t('bank.message_destroyed') }
-      format.json { head :no_content }
+      if @bank.destroy
+        format.html { redirect_to banks_path, notice: I18n.t('bank.message_destroyed') }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to banks_path, notice: @bank.errors.full_messages.join(', ') }
+        format.json { render json: { message: I18n.t('bank.message_not_destroyed') }, status: :unprocessable_entity }
+      end
     end
   end
 

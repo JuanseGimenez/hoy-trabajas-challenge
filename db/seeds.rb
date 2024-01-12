@@ -11,14 +11,12 @@ puts 'Creating providers...'
   provider = Provider.create!(name: Faker::Company.name,
                              nit: "#{Faker::Number.number(digits: 9)}-#{Faker::Number.number(digits: 1)}",
                              contact_name: Faker::Name.name,
-                             contact_phone: Faker::Number.number(digits: 10))
+                             contact_phone: Faker::Number.number(digits: 10),
+                             bank_account_attributes: {
+                                number: Faker::Number.number(digits: 15),
+                                bank_id: Bank.all.sample.id
+                             })
   puts "Provider created #{provider.name}"
-
-  puts 'Creating bank account...'
-  bank_account = BankAccount.create!(number: Faker::Number.number(digits: 15),
-                     bank_id: Bank.all.sample.id,
-                     provider_id: provider.id)
-  puts "Bank account created #{bank_account.number}"
 end
 
 puts 'Creating user...'

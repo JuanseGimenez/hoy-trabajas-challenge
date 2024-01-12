@@ -23,8 +23,10 @@ class ProvidersController < ApplicationController
     respond_to do |format|
       if @provider.save
         format.html { redirect_to providers_path, notice: I18n.t('provider.message_created') }
+        format.json { render :show, status: :created, location: @provider }
       else
         format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @provider.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -33,6 +35,7 @@ class ProvidersController < ApplicationController
     respond_to do |format|
       if @provider.update(provider_params)
         format.html { redirect_to providers_path, notice: I18n.t('provider.message_updated') }
+        format.json { render :show, status: :ok, location: @provider }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -44,6 +47,7 @@ class ProvidersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to providers_path, notice: I18n.t('provider.message_destroyed') }
+      format.json { head :no_content }
     end
   end
 
@@ -60,5 +64,9 @@ class ProvidersController < ApplicationController
 
   def set_banks
     @banks = Bank.all
+  end
+
+  def record_not_found
+    render json: { error: I18n.t('provider.not_found') }, status: :not_found
   end
 end

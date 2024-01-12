@@ -30,6 +30,7 @@ es:
     message_created: Banco creado exitosamente
     message_updated: Banco actualizado exitosamente
     message_destroyed: Banco eliminado exitosamente
+    not_found: No se encontró el banco
     index:
       title: Bancos
       not_found: Sin información en la tabla
@@ -39,6 +40,8 @@ es:
       title: Nuevo Banco
   provider:
     nit_format: "debe tener el siguiente formato: 12345678-9 siendo el ultimo digito opcional"
+    bank_account_presence: "debe tener al menos una cuenta bancaria con un id de banco asociado"
+    not_found: No se encontró el proveedor
     message_created: Proveedor creado exitosamente
     message_updated: Proveedor actualizado exitosamente
     message_destroyed: Proveedor eliminado exitosamente

@@ -1,7 +1,7 @@
 <h1><%= I18n.t('bank.index.title') %></h1>
 <%= link_to I18n.t('actions.new', model: Bank.model_name.human), new_bank_path %>
-<br>
-<table>
+
+<table class="mt-2 mb-2">
   <thead>
     <tr>
       <th><%= Bank.human_attribute_name :name %></th>
@@ -26,3 +26,6 @@
       </tr>
     <% end %>
   </tbody>
+</table>
+
+<%= will_paginate @providers %>

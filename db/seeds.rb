@@ -1,8 +1,7 @@
 puts 'Creating banks...'
-banks = ['ICBC', 'Banco Nacion', 'Banco Provincia']
 
-banks.each do |name|
-  bank = Bank.create!(name: name)
+20.times do
+  bank = Bank.create!(name: Faker::Bank.name)
   puts "Bank created #{bank.name}"
 end
 

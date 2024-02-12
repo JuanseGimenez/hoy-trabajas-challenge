@@ -42,7 +42,7 @@ es:
     new:
       title: Nuevo Banco
   provider:
-    nit_format: "debe tener el siguiente formato: 12345678-9 siendo el ultimo digito opcional"
+    nit_format: "debe tener el siguiente formato: 123456789-9 siendo el ultimo digito opcional"
     bank_account_presence: "debe tener al menos una cuenta bancaria con un id de banco asociado"
     not_found: No se encontró el proveedor
     message_created: Proveedor creado exitosamente
